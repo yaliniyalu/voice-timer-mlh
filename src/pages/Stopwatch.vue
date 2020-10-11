@@ -8,10 +8,7 @@
         <!-- Page content-->
         <f7-block strong>
             <h1 class="text-align-center text-color-primary watch-display">
-                <span class="time-hr">{{ display[0] | pad(2) }}</span>
-                <span class="time-min">: {{ display[1] | pad(2) }}</span>
-                <span class="time-sec">: {{ display[2] | pad(2) }}</span>
-                <span class="time-ms text-color-gray">: {{ display[3] | pad(3) }}</span>
+                <span class="time-hr">{{ display[0] | pad(2) }}</span><span class="time-min">:{{ display[1] | pad(2) }}</span><span class="time-sec">:{{ display[2] | pad(2) }}</span><span class="time-ms text-color-gray">:{{ display[3] | pad(3) }}</span>
             </h1>
         </f7-block>
 
