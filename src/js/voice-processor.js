@@ -1,4 +1,4 @@
-import {processBlob, processText} from "./wit";
+import {processBlobWithProxy, processText} from "./wit";
 import VoiceRecorder from "./voice-recorder";
 import Events from "./events";
 import speech from "./speech";
@@ -26,7 +26,7 @@ class VoiceProcessor extends Events{
                 voice_stop: (blob) => {
                     console.log('vad_stop');
 
-                    processBlob(blob)
+                    processBlobWithProxy(blob)
                         .then(data => this.processNLP(data));
                 }
             };
@@ -40,7 +40,7 @@ class VoiceProcessor extends Events{
 
     emulate(text) {
         processText(text)
-            .then(data => this.processNLP(data));
+            .then(data => this.processNLP(data)).catch(e => console.log(e));
     }
 
     processNLP(wit) {
